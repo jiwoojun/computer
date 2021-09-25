@@ -1,6 +1,12 @@
 namespace SpriteKind {
     export const part_of_computer = SpriteKind.create()
 }
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    music.playTone(523, music.beat(BeatFraction.Half))
+    music.playTone(392, music.beat(BeatFraction.Half))
+    music.playTone(440, music.beat(BeatFraction.Half))
+    music.setVolume(100)
+})
 scene.setBackgroundColor(12)
 let monitor = sprites.create(img`
     ................................................................
@@ -169,3 +175,4 @@ let mouse_pointer = sprites.create(img`
     `, SpriteKind.part_of_computer)
 mouse_pointer.setPosition(81, 46)
 controller.moveSprite(mouse)
+controller.moveSprite(mouse_pointer)
